@@ -1,0 +1,101 @@
+.NavbarUser {
+  position: absolute;
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50px;
+  width: 100vw;
+}
+
+.NavbarUser ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.NavbarUser ul li {
+  display: inline-block;
+  line-height: 50px;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 50px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+.nav-link {
+  font-size: 15px;
+  color: #000;
+  font-weight: 900;
+  text-decoration: none;
+  margin: 0 15px;
+  letter-spacing: 1px;
+}
+
+.nav-link:hover {
+  color: #3eb489;
+}
+
+.nav-link.active {
+  color: #3eb489;
+}
+
+@media (max-width: 1000px) {
+  .NavbarUser {
+    justify-content: flex-start;
+  }
+  .Burger {
+    margin-right: 20px;
+    filter: brightness(0);
+  }
+  .checkbtn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  .nav-link {
+    font-size: 20px;
+    color: black;
+  }
+  .NavbarUser ul {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0;  
+    padding: 0;
+    width: 60vw;
+    height: calc(100vh - 50px);
+    background: #b6f9e0;
+    top: 50px;
+    right: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    flex-direction: column;
+  }
+  .NavbarUser ul li {
+    display: block;
+    margin: 20px;
+    line-height: 20px;
+  }
+  #check:checked ~ ul {
+    right: 0;
+  }
+}
