@@ -16,13 +16,13 @@ Admin dashboard for managing products and inventory
 
 Technologies Used
 
-Radix UI: Provides a set of accessible and customizable UI components for building the user interface.
+Radix UI: for accessible and customizable UI components to build the user interface.
 
 MongoDB: Used as the database to store user and product data.
 
-ReactJS: Powers the frontend of the web application, enabling dynamic and interactive user interfaces.
+ReactJS: Frontend of the web application.
 
-ExpressJS: Serves as the backend framework for handling API requests and server-side logic.
+ExpressJS: Backend framework for handling API requests and server-side logic.
 
 Jotai: Manages state across the application, particularly for the shopping cart functionality.
 
