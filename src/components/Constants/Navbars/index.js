@@ -1,8 +1,8 @@
 import { FaLongArrowAltRight } from "react-icons/fa";
 import './Navbar.css';
-import '../../../1_MediaAssets/Styles/App.scss';
-import Burger from '../../../1_MediaAssets/Images/BrandAssets/Burger.png';
-import Logo from '../../../1_MediaAssets/Images/BrandAssets/LogoMainGreen.png';
+import '../../1_MediaAssets/Styles/App.scss';
+import Burger from '../../1_MediaAssets/Images/BrandAssets/Burger.png';
+import Logo from '../../1_MediaAssets/Images/BrandAssets/LogoMainGreen.png';
 import { NavLink } from "react-router-dom";
 import React, { useState, useEffect, useRef } from 'react';
 
@@ -46,17 +46,17 @@ const NavbarUser = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" onClick={() => setIsChecked(false)} to="/about">
-            About
+          <NavLink className="nav-link" onClick={() => setIsChecked(false)} to="/products">
+            Products
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" onClick={() => setIsChecked(false)} to="/contact">
-            Contact
+          <NavLink className="nav-link" onClick={() => setIsChecked(false)} to="/adminlogin">
+            Admin
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav-link" onClick={() => setIsChecked(false)} to="/userlogin">
+          <NavLink className="nav-link shower" onClick={() => setIsChecked(false)} to="/userlogin">
             Login
           </NavLink>
         </li>  
@@ -65,13 +65,23 @@ const NavbarUser = () => {
             Sign up
           </NavLink>
         </li>  
-        <li className="hider" style={{position: 'absolute', right: '20px'}}>
-          <NavLink className="nav-link hider" onClick={() => setIsChecked(false)} to="/userregistration">
-            <button style={{padding: '5px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                Sign up <FaLongArrowAltRight />
-            </button>
-          </NavLink>
-        </li> 
+        <div className="hider" style={{position: 'absolute', right: '20px'}}>
+          <li>
+            <NavLink className="nav-link hider" onClick={() => setIsChecked(false)} to="/userregistration">
+              <button style={{padding: '5px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid #459779', background: 'transparent', color: '#459779', fontWeight: '900'}}>
+                  Login <FaLongArrowAltRight />
+              </button>
+            </NavLink>
+          </li> 
+          <li>
+            <NavLink className="nav-link hider" onClick={() => setIsChecked(false)} to="/userregistration">
+              <button style={{padding: '5px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                  Sign up <FaLongArrowAltRight />
+              </button>
+            </NavLink>
+          </li> 
+        </div>
+
       </ul>
     </nav>
   );

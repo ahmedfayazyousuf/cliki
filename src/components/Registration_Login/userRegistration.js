@@ -1,13 +1,17 @@
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { Label } from '@radix-ui/react-label';
 
 const SignupPage = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: ''
-  });
+  }); 
 
   const [errors, setErrors] = useState({
     name: '',
@@ -28,7 +32,6 @@ const SignupPage = () => {
     e.preventDefault();
     const { name, email, password, confirmPassword } = formData;
     
-    // Basic validation
     let hasErrors = false;
     const newErrors = {
       name: '',
@@ -62,7 +65,7 @@ const SignupPage = () => {
       return;
     }
 
-    try {
+    try { 
       const response = await fetch('http://localhost:5000/api/users/register', {
         method: 'POST',
         headers: {
@@ -74,7 +77,8 @@ const SignupPage = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert('User registered successfully');
+        // alert('User registered successfully');
+        navigate('/userlogin');
       } else {
         setErrors({ ...errors, general: data.msg });
       }
