@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/MainPages/1_Home';
-import Error from './components/MainPages/10_Error';
+import Home from './components/Home';
+import Error from './components/Error';
 import UserRegistrationPage from './components/Registration_Login/userRegistration';
 import UserLogin from './components/Registration_Login/userLogin';
 import ProductsPage from './components/ProductsPage';

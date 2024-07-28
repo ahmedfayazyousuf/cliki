@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../1_MediaAssets/Images/BrandAssets/Logo.png'
+import Logo from '../1_MediaAssets/Images/BrandAssets/Logo.png'
 import { NavLink } from 'react-router-dom';
 
 const Error = () => {

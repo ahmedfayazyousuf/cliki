@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../../Constants/Navbars';
-import logo from '../../1_MediaAssets/Images/BrandAssets/LogoMainGreen.png'
+import Navbar from '../Constants/Navbars';
+import logo from '../1_MediaAssets/Images/BrandAssets/LogoMainGreen.png'
 
 const userLogin = () => {
  
