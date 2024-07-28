@@ -67,7 +67,7 @@ const NavbarUser = () => {
         </li>  
         <div className="hider" style={{position: 'absolute', right: '20px'}}>
           <li>
-            <NavLink className="nav-link hider" onClick={() => setIsChecked(false)} to="/userregistration">
+            <NavLink className="nav-link hider" onClick={() => setIsChecked(false)} to="/userlogin">
               <button style={{padding: '5px 20px', display: 'flex', justifyContent: 'center', alignItems: 'center', border: '1px solid #459779', background: 'transparent', color: '#459779', fontWeight: '900'}}>
                   Login <FaLongArrowAltRight />
               </button>
