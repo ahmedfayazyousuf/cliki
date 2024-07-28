@@ -23,6 +23,11 @@ Open your browser and go to https://cliki.vercel.app/ to view the application de
 
 The server is deployed on https://clikiserver.vercel.app/
 
+In order to access the admin side to upload products kindly follow the following steps:
+go to https://cliki.vercel.app/admindashboard
+email: admin@gmail.com
+password: admin12345
+
 API Endpoints
 POST /api/users/register: Register a new user.
 POST /api/users/login: Login an existing user.
