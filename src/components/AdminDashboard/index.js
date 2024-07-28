@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
+  const navigate = useNavigate();
   const [productData, setProductData] = useState({ name: '', description: '', price: '', imageUrl: '' });
   const [errors, setErrors] = useState({ name: '', description: '', price: '', imageUrl: '', general: '' });
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,13 +36,18 @@ const AddProduct = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log('Product added:', data);
+        setSuccessMessage('Item added to inventory');
+        setProductData({ name: '', description: '', price: '', imageUrl: '' });
+        setErrors({ name: '', description: '', price: '', imageUrl: '', general: '' });
+        navigate('/products');
       } else {
         setErrors({ ...errors, general: data.msg });
+        setSuccessMessage('');
       }
     } catch (error) {
       console.error('Error:', error);
       setErrors({ ...errors, general: 'Server Error' });
+      setSuccessMessage('');
     }
   };
 
@@ -65,8 +73,10 @@ const AddProduct = () => {
           <label htmlFor="imageUrl">Image URL</label>
           <input className='inputregform' id="imageUrl" name="imageUrl" type="text" value={productData.imageUrl} onChange={handleChange}/>
         </div>
-        <div style={{width: '100%', textAlign: 'center', fontSize: '10px'}} className="form-errors">{errorMessages}</div>
-        <button style={{width: '100%', borderRadius: '5px'}} type="submit">Add Product</button>
+        <div style={{ width: '100%', textAlign: 'center', fontSize: '10px', color: successMessage ? 'green' : 'red' }} className="form-errors">
+          {successMessage || errorMessages}
+        </div>
+        <button style={{ width: '100%', borderRadius: '5px', padding: '20px 0px' }} type="submit">Add Product</button>
       </form>
     </div>
   );
