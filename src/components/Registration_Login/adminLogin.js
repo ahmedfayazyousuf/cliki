@@ -21,7 +21,7 @@ const AdminLogin = () => {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const response = await fetch('http://localhost:5000/api/users/auth', {
+          const response = await fetch('https://clikiserver.vercel.app/api/users/auth', {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const AdminLogin = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/users/adminlogin', {
+      const response = await fetch('https://clikiserver.vercel.app/api/users/adminlogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
